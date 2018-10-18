@@ -2,6 +2,7 @@ package POJOS;
 
 import com.github.javaparser.ast.body.Parameter;
 import com.github.javaparser.ast.comments.Comment;
+import com.github.javaparser.ast.stmt.Statement;
 
 import java.util.List;
 
@@ -9,16 +10,20 @@ public class MethodInfo {
 
     private String name;
     private int length, paramSize;
-    private boolean isTooLong, paramSizeTooLong;
-
     private List<Parameter> parameters;
     private List<Comment> comments;
+    private List<Statement> statements;
 
-    public MethodInfo(String name, int methodLength, List<Parameter> paras, List<Comment> comments){
+    private boolean isTooLong, paramSizeTooLong;
+    private List<Parameter> parameterPrimitives;
+
+
+    public MethodInfo(String name, int methodLength, List<Parameter> paras, List<Statement> statements, List<Comment> comments){
         this.name = name;
         this.length = methodLength;
         this.parameters = paras;
         this.comments = comments;
+        this.statements = statements;
     }
 
     public String getName() {
@@ -75,5 +80,21 @@ public class MethodInfo {
 
     public void setComments(List<Comment> comments) {
         this.comments = comments;
+    }
+
+    public List<Parameter> getParameterPrimitives() {
+        return parameterPrimitives;
+    }
+
+    public void setParameterPrimitives(List<Parameter> parameterPrimitives) {
+        this.parameterPrimitives = parameterPrimitives;
+    }
+
+    public List<Statement> getStatements() {
+        return statements;
+    }
+
+    public void setStatements(List<Statement> statements) {
+        this.statements = statements;
     }
 }

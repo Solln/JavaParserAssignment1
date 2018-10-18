@@ -12,13 +12,15 @@ public class ReversePolishNotation {
 
     private double memory = 0;
 
+    private String testGetter;
+
     /**
      * Takes reverse polish notation style string and returns the resulting calculation.
      *
      * @param input mathematical expression in the reverse Polish notation format
      * @return the calculation result
      */
-    public Double calc(String input, String test1, String test2, String test3, String test4, String test5) {
+    public Double calc(String input, String test1, String test2, byte test3, double test4, int test5) {
 
         String[] tokens = input.split(" ");
         Stack<Double> numbers = new Stack<>();
@@ -66,13 +68,15 @@ public class ReversePolishNotation {
     /**
      * Memory Clear sets the memory to 0.
      */
-    public void memoryClear(){
-        memory = 0;
-    }
+//    public void memoryClear(){
+//        memory = 0;
+//    }
 
 
     public void memoryStore(double value){
         memory = value;
     }
+
+    public String getGetter(){ return testGetter; }
 
 }

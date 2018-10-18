@@ -1,6 +1,7 @@
 package POJOS;
 
 import com.github.javaparser.ast.body.FieldDeclaration;
+import com.github.javaparser.ast.body.VariableDeclarator;
 import com.github.javaparser.ast.comments.Comment;
 
 import java.util.List;
@@ -12,6 +13,8 @@ public class ClassInfo {
     private List<MethodInfo> methods;
     private List<Comment> comments;
     private List<FieldDeclaration> fields;
+
+    private List<VariableDeclarator> variablePrimitives;
 
     private boolean isTooLong, hasTooManyMethods, switchStatementsPresent, isDataClass;
 
@@ -94,5 +97,13 @@ public class ClassInfo {
 
     public void setFields(List<FieldDeclaration> fields) {
         this.fields = fields;
+    }
+
+    public List<VariableDeclarator> getVariablePrimitives() {
+        return variablePrimitives;
+    }
+
+    public void setVariablePrimitives(List<VariableDeclarator> variablePrimitives) {
+        this.variablePrimitives = variablePrimitives;
     }
 }
