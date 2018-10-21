@@ -14,6 +14,12 @@ public class ReversePolishNotation {
 
     private String testGetter;
 
+    int a = 1;
+
+    int b = a + 1;
+
+    int c = b + a;
+
     /**
      * Takes reverse polish notation style string and returns the resulting calculation.
      *
@@ -22,8 +28,14 @@ public class ReversePolishNotation {
      */
     public Double calc(String input, String test1, String test2, byte test3, double test4, int test5) {
 
+
+        int e = 2;
+        int d = e + 1;
+
         String[] tokens = input.split(" ");
         Stack<Double> numbers = new Stack<>();
+
+        testGetter = "ayy";
 
         Stream.of(tokens).forEach(t -> {
             double a;
@@ -68,9 +80,9 @@ public class ReversePolishNotation {
     /**
      * Memory Clear sets the memory to 0.
      */
-//    public void memoryClear(){
-//        memory = 0;
-//    }
+    public void memoryClear(){
+        memory = 0;
+    }
 
 
     public void memoryStore(double value){
